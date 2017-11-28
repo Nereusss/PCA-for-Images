@@ -50,7 +50,7 @@ figure; subplot(3, 3, 1), imshow(Dog_image), title('Original');
 % level ofaccuracy
 for i = 1:length(levels)
     
-    % Throw out the trifling terms in S    
+    % Throw out the trifling terms in S(original single value matrix)   
     approximation_s_1 = s_1; 
     approximation_s_1(levels(i):end) = 0;
     
@@ -60,7 +60,7 @@ for i = 1:length(levels)
     approximation_s_3 = s_2; 
     approximation_s_3(levels(i):end) = 0;
     
-    % Construct the new single value matrix
+    % Construct the new single value matrix approximation_S_i
     length_s_1 = length(s_1);
     approximation_S_1 = S_1; 
     approximation_S_1(1:length_s_1, 1:length_s_1) = diag(approximation_s_1);

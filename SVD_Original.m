@@ -47,7 +47,7 @@ figure; imshow(Dog_image2), title('Image composed by three original copies of th
 figure; subplot(3, 3, 1), imshow(Dog_image), title('Original');
 
 % Iterate through i to plot approximations of the Dog in different
-% level ofaccuracy
+% level of accuracy
 for i = 1:length(levels)
     
     % Throw out the trifling terms in S(original single value matrix)   
@@ -78,6 +78,7 @@ for i = 1:length(levels)
     approximation_Dog_2 = U_2 * approximation_S_2 * V_2';
     approximation_Dog_3 = U_3 * approximation_S_3 * V_3';
     
+    % Combine the third channels
     approximation_Dog(:, :, 1) = approximation_Dog_1;
     approximation_Dog(:, :, 2) = approximation_Dog_2;
     approximation_Dog(:, :, 3) = approximation_Dog_3;
